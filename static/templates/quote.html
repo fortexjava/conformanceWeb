@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Quote Conformance Test Center</title>
+    <script src="../js/jquery-1.4.4.min.js"></script>
+
+    <link href="../css/common.css" rel="stylesheet"/>
+</head>
+<body>
+
+<div class="main">
+	<div  align="right" class="right">[<a href="/logout" th:text="#{logout}">Logout</a>]&nbsp;</div>
+	<div align="center" class="head"> Hello <span th:text="${user.loginId}"></span>, this is the Fortex Market Data conformance testing tool</div>
+	<div class="content">
+		 <table width="80%">		 			 	
+		 	<tr>
+		 		<td>
+		 			<label>		 			
+		 				<input name="chs_step" type="radio" value="1"  checked="checked"  onclick="choose_step(-1,-1,1);" />
+		 				step 1:<span th:text="#{server.login}">Please connect/reconnect and logon to Fortex Fix Server at IP</span>:<span th:text="${ip}">124.4.2.11</span>
+		 			</label>
+		 		</td>
+		 		<td><input type="button" value="Ready, check my status" th:value="#{readyandcheck}"  onclick="checkStatus(1)" id="btn1" /></td>
+		 		<td>
+		 			<span id="step1" style="display:none" ><label id="step1_status">Failed</label>
+		 			<a th:href="@{/track/viewlogs(username=${user.loginId},step=1)}" target="_blank" th:text="#{viewlogs}" >View logs</a> 
+		 			</span>
+		 		</td>
+		 	</tr>
+		 	
+		 	<tr>
+		 		<td>
+		 			<label>
+		 				<input name="chs_step" type="radio" value="2"   onclick="choose_step(-1,-1,2);" />
+		 				step 2:<span th:text="#{quote.marketDataRequest}">Market Data Request for EUR/USD</span>(Full Book, MarketDepth = 0)
+		 			</label>
+		 		</td>
+		 		<td><input type="button" value="Ready, check my status" th:value="#{readyandcheck}" onclick="checkStatus(2)" disabled="disabled" id="btn2" /></td>
+		 		<td>
+		 			<span id="step2" style="display:none" ><label id="step2_status">Failed</label> 		 				 
+		 				<a th:href="@{/track/viewlogs(username=${user.loginId},step=2)}" target="_blank" th:text="#{viewlogs}" >View logs</a>
+		 			</span>
+		 		</td>
+		 	</tr>
+		 	
+		 	<tr>
+		 		<td>
+		 			<label>
+		 			<input name="chs_step" type="radio" value="3"   onclick="choose_step(-1,-1,3);" />
+		 			step 3:<span th:text="#{quote.unsubscribe}">Unsubscribe</span>
+		 			</label>
+		 		</td>
+		 		<td><input type="button" value="Ready, check my status" th:value="#{readyandcheck}" onclick="checkStatus(3)" disabled="disabled" id="btn3" /></td>
+		 		<td>
+		 			<span id="step3" style="display:none" ><label id="step3_status">Failed</label> 		 				 
+		 				<a th:href="@{/track/viewlogs(username=${user.loginId},step=3)}" target="_blank"  th:text="#{viewlogs}" >View logs</a>
+		 			</span>
+		 		</td>
+		 	</tr>
+		 	
+		 	<tr>
+		 		<td >
+		 			<label>
+		 			<input name="chs_step" type="radio" value="4"   onclick="choose_step(-1,-1,4);" />
+		 			step 4:<span th:text="#{quote.marketDataRequest}">Market Data Update for EUR/USD</span>(Top Book, MarketDepth = 1)
+		 			</label>
+		 		</td>
+		 		<td><input type="button" value="Ready, check my status" th:value="#{readyandcheck}" onclick="checkStatus(4)" disabled="disabled" id="btn4" /></td>
+		 		<td>
+		 			<span id="step4" style="display:none" ><label id="step4_status">Failed</label> 		 				 
+		 				<a th:href="@{/track/viewlogs(username=${user.loginId},step=4)}" target="_blank" th:text="#{viewlogs}" >View logs</a>
+		 			</span>
+		 		</td>
+		 	</tr>
+		 	
+		 	<tr>
+		 		<td >
+		 			<label>
+		 				<input name="chs_step" type="radio" value="5"   onclick="choose_step(-1,-1,5);" />
+		 				step 5:<span th:text="#{quote.unsubscribe}">Unsubscribe</span>
+		 			</label>
+		 		</td>
+		 		<td><input type="button" value="Ready, check my status" th:value="#{readyandcheck}" onclick="checkStatus(5)" disabled="disabled" id="btn5" /></td>
+		 		<td>
+		 			<span id="step5" style="display:none" ><label id="step5_status">Failed</label> 		 				 
+		 				<a th:href="@{/track/viewlogs(username=${user.loginId},step=5)}" target="_blank" th:text="#{viewlogs}">View logs</a>
+		 			</span>
+		 		</td>
+		 	</tr>
+			
+			
+			<tr>
+		 		<td >
+		 			<label>
+		 			<input name="chs_step" type="radio" value="6"   onclick="choose_step(-1,-1,6);" />
+		 			step 6:<span th:text="#{quote.marketDataRequest}">Market Data Update for EUR/USD</span>(Report best 5 price tiers of Data, MarketDepth = 5)
+		 			</label>
+		 		</td>
+		 		<td><input type="button" value="Ready, check my status" th:value="#{readyandcheck}" onclick="checkStatus(6)" disabled="disabled" id="btn6" /></td>
+		 		<td>
+		 			<span id="step6" style="display:none" ><label id="step6_status">Failed</label> 		 				 
+		 				<a th:href="@{/track/viewlogs(username=${user.loginId},step=6)}" target="_blank" th:text="#{viewlogs}" >View logs</a>
+		 			</span>
+		 		</td>
+		 	</tr>
+		 	
+		 	<tr>
+		 		<td >
+		 			<label>
+		 			<input name="chs_step" type="radio" value="7"   onclick="choose_step(-1,-1,7);" />
+		 			step 7:<span th:text="#{quote.unsubscribe}">Unsubscribe</span>
+		 			</label>
+		 		</td>
+		 		<td><input type="button" value="Ready, check my status" th:value="#{readyandcheck}" onclick="checkStatus(7)" disabled="disabled" id="btn7" /></td>
+		 		<td>
+		 			<span id="step7" style="display:none" ><label id="step7_status">Failed</label> 		 				 
+		 				<a th:href="@{/track/viewlogs(username=${user.loginId},step=7)}" target="_blank" th:text="#{viewlogs}" >View logs</a>
+		 			</span>
+		 		</td>
+		 	</tr>
+		 	
+		 	<tr>
+		 		<td >
+		 			<label>
+		 			<input name="chs_step" type="radio" value="8"   onclick="choose_step(-1,-1,8);" />
+		 			step 8:<span th:text="#{server.logout}">Logout</span>
+		 			</label>
+		 		</td>
+		 		<td><input type="button" value="Ready, check my status" th:value="#{readyandcheck}" onclick="checkStatus(8)" disabled="disabled" id="btn8" /></td>
+		 		<td>
+		 			<span id="step8" style="display:none" ><label id="step8_status">Failed</label> 		 				 
+		 				<a th:href="@{/track/viewlogs(username=${user.loginId},step=8)}" target="_blank" th:text="#{viewlogs}" >View logs</a>
+		 			</span>
+		 		</td>
+		 	</tr>
+ 		 	
+		 </table>
+		 
+		 <div align="center" id="result" style="display:none" th:text="#{quote.logout}">
+		 	You have passed the conformance test for Fortex FIX Market Data !!
+		 </div>
+		 
+		 <div align="center">
+		 		<input type="button" value="Reset all steps" th:value="#{reset}"  onclick="reset(); choose_step(-1,-1,1);"/>
+		 </div>
+		  
+		 
+	</div>
+	
+	 <div align="right" >
+			 		<a href="?lang=en">English</a> |
+			 		<a href="?lang=zh_CN">简体中文</a> |
+			 		<a href="?lang=zh_TW">繁体中文</a>
+	</div>
+	
+		 
+</div>
+</body>
+<script type="text/javascript" src="/js/conformance.js"></script>
+<script type="text/javascript">
+
+/*<![CDATA[*/
+var steps = 8;
+ /*]]>*/
+ 
+ choose_step(-1,-1,1);
+</script>
+
+
+</html>

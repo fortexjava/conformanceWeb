@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>FIX client conformance test center view logs</title>
+    <script src="../js/jquery-1.4.4.min.js"></script>
+    <script src="../js/jquery.reveal.js"></script>
+
+    <link href="../css/common.css" rel="stylesheet"/>
+    <link href="../css/reveal.css" rel="stylesheet"/>
+
+</head>
+<body>
+
+    <div id="myModal" class="reveal-modal" style="opacity: 1; visibility: hidden; top: 100px;">
+        <h2>Solution</h2>
+
+        <p th:text="${sentToClientRecord} and ${sentToClientRecord.solution}?${sentToClientRecord.solution.solution}"></p>
+
+        <a class="close-reveal-modal">×</a>
+
+    </div>
+
+    <div class="main">
+        <div align="center" class="head" th:text="#{viewlogs}">View logs</div>
+        <div class="content">
+
+            <div class="viewLogBlock">
+                <div class="top">
+                    <div align="left">
+                        <p style="font-weight: bold; font-size: 22px;">
+                            <span th:text="#{status}">Status</span>: <span th:if="(${sentToClientRecord} and ${sentToClientRecord.status eq 1}) or !${sentToClientRecord}" style="color: red">Failed</span>
+                            <span th:if="${sentToClientRecord} and ${sentToClientRecord.status eq 0}" style="color: green">Passed</span>
+                        </p>
+                        <p>
+                            <span th:if="${sentToClientRecord} and ${sentToClientRecord.status eq 1}"
+                                  th:text="${'Failed Reason:' + sentToClientRecord.reason }">Failed Reason: The password for the user name is not correct</span>
+                            <a href="#" class="big-link" data-reveal-id="myModal" th:if="${sentToClientRecord} and ${sentToClientRecord.solution}" data-animation="fade">Show Solutions</a>
+                        </p>
+
+                    </div>
+                </div>
+
+                <div class="mid">
+                    <div class="left">
+                        <span th:text="#{message.yousent}">Message you sent</span>
+                        <p>
+                            <textarea id="u10_input" rows="20"
+                                      th:text="${clientRecord}?${clientRecord.message}:''"></textarea>
+                        </p>
+
+                    </div>
+                    <div class="right">
+                        <span th:text="#{message.serversent}">Server response message</span>
+                        <p>
+
+                            <textarea id="u10_input" rows="20"
+                                      th:text="${sentToClientRecord}?${sentToClientRecord.message}:''"></textarea>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="bottonm">
+                    <div>
+                        <div align="center">
+                            <input type="button" value="Close this" th:value="#{btn.close}"
+                                   onclick="javascript:self.close()" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+
+
+        </div>
+
+    </div>
+</body>
+
+</html>

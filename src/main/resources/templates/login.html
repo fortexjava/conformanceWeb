@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+    <head>
+        <title>FIX client conformance test center</title>
+         
+    	  <style type="text/css">
+html,body{
+    height: 100%;
+    width: 100%;
+    font-size: 16px;
+    font-family: Black;
+    color: #535353;
+    margin: 0px; 
+}
+        .main{
+        		float:left;
+        		margin-left: auto;
+				margin-right: auto;    		     		 
+        		width:80%;
+        		height:300px;
+         		vertical-align:middle;
+        		position:absolute;
+        		left:10%;top:5%;
+        		border:solid #000 1px;
+        	}
+        .content{
+        	margin-left:1%;
+        	margin-right:1%;
+        	margin-top:30px;
+        }
+        
+        .btn{
+        	width:180px;
+        	height:50px;
+        	align:center;
+        }
+        
+        .head{
+        	font-size:30px;
+        	font-weight:bold;
+        	margin-top:5px;
+        }
+      </style>
+    </head>
+<body>
+<div class="main">
+	<div align="center" class="head">FIX client conformance test center  </div>
+	<div class="content">
+		<form action="#" th:action="@{/}" th:object="${loginForm}" method="post" > 
+		<p>
+		   	<div align="center"> 
+	   				<label th:text="#{account}">Account</label>：<input th:field="*{loginId}" style="width:300px" th:value="${loginForm.loginId}" />  
+	   				<span style="color:red"  th:if="${#fields.hasErrors('loginId')}" th:text="#{accountNotEmpty}">Account Error</span>
+		   	</div>
+		   
+		   <div align="center"> 
+	   				<label th:text="#{password}">Password</label>：<input th:field="*{password}" type="password" style="width:300px" />
+	   				<span style="color:red"  th:if="${#fields.hasErrors('password')}" th:text="#{passwordNotEmpty}">Password Error</span>  
+		 	</div>
+		 	
+		 			 	
+		   	<div align="center">
+		   		 <span style="color:red" th:if="${#fields.hasErrors('illegal')}" th:text="${'Illegal account or password'}">Illegal account or password</span>
+		   	</div>	 		   	
+		</p>
+	
+	 	<p>  
+		   	<div align="center"> 
+		   			<input class="btn" type="submit" value="Login" th:value="#{login}" />    
+		   	</div>
+		</p>
+		 
+		 </form>
+		 
+		 <p>
+		 	<div align="right" >
+		 		<a href="?lang=en">English</a> |
+		 		<a href="?lang=zh_CN">简体中文</a> |
+		 		<a href="?lang=zh_TW">繁体中文</a>
+		 	</div>
+		 </p>
+	</div>	 
+</div>
+</body> 
+
+ </html>

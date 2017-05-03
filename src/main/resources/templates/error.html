@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+    <head>
+        <title>error occurs</title>
+    	  <style type="text/css">
+html,body{
+    height: 100%; 
+    width: 100%;
+    font-size: 16px;
+ 
+    color: #535353;
+    margin: 0px; 
+}
+        .main{
+        		float:left;
+        		margin-left: auto;
+				margin-right: auto;    		     		 
+        		width:80%;
+        		height:500px;
+         		vertical-align:middle;
+        		position:absolute;
+        		left:10%;top:5%;
+        		border:solid #000 1px;
+        	}
+        .content{
+        	margin-left:1%;
+        	margin-right:1%;
+        	margin-top:5px;
+        }
+        
+        .btn{
+        	width:180px;
+        	height:50px;
+        	align:center;
+        }
+        
+        .head{
+        	font-size:30px;
+        	font-weight:bold;
+        	margin-top:5px;
+        }
+      </style>
+    </head>
+<body>
+<div class="main">
+	<div align="center" class="head"></div>
+	<div class="content">
+		<p>
+		   	<div align="center"  style="color:red">Error occurs!</div>
+		 </p>
+	
+	 	<p>
+		   	<div align="center"> 
+		   				<input class="btn" type="button" value="Back" onclick="window.history.back()" />  
+		   	</div>
+		 </p>
+	</div>	 
+</div>
+</body> 
+
+ </html>

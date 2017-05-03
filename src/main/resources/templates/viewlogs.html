@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+<title>FIX client conformance test center view logs</title>
+<script type="text/javascript" src="/js/jquery-1.4.4.min.js"></script>
+<script type="text/javascript" src="/js/jquery.reveal.js"></script> 
+
+<style type="text/css">
+html, body {
+	height: 100%;
+	width: 100%;
+	font-size: 20px;
+	color: #535353;
+	margin: 0px;
+}
+
+.main {
+	float: left;
+	margin-left: auto;
+	margin-right: auto;
+	width: 80%;
+	height: auto;
+	vertical-align: middle;
+	position: absolute;
+	left: 10%;
+	top: 5%;
+	border: solid #000 1px;
+}
+
+.content {
+	margin-left: 1%;
+	margin-right: 1%;
+	margin-top: 30px;
+}
+
+.btn {
+	width: 180px;
+	height: 50px;
+	align: center;
+}
+
+.head {
+	font-size: 30px;
+	font-weight: bold;
+	margin-top: 5px;
+}
+
+.big-link { display: block; text-align: left; font-size: 20px; color: #06f; }
+</style>
+<link rel="stylesheet" href="/css/reveal.css" />	
+
+</head>
+<body>
+
+<div id="myModal" class="reveal-modal" style="opacity: 1; visibility: hidden; top: 100px;">
+			<h2>Solution</h2>
+
+			<p th:text="${sentToClientRecord} and ${sentToClientRecord.solution}?${sentToClientRecord.solution.solution}"></p>
+
+			<a class="close-reveal-modal">×</a>
+
+</div>
+
+	<div class="main">
+		<div align="center" class="head">View the logs</div>
+		<div class="content">
+
+			<div style="width: 100%; float: left;">
+				<div align="left">
+					<p style="font-weight: bold;font-size: 22px;">
+						Status: <span th:if="(${sentToClientRecord} and ${sentToClientRecord.status eq 1}) or !${sentToClientRecord}" style="color:red">Failed</span>
+						<span th:if="${sentToClientRecord} and ${sentToClientRecord.status eq 0}" style="color:green">Passed</span>
+					</p>
+					<p >
+						<span th:if="${sentToClientRecord} and ${sentToClientRecord.status eq 1}"
+						th:text="${'Failed Reason:' + sentToClientRecord.reason }">Failed Reason: The password for the user name is not correct</span>
+						<a href="#"  class="big-link" data-reveal-id="myModal" th:if="${sentToClientRecord} and ${sentToClientRecord.solution}" data-animation="fade">Show Solutions</a>										
+					</p>
+										 
+				</div>
+			</div>
+
+
+			<div style="width: 500px; float: left;">
+				<span>Message you sent</span>
+				<p>
+					<textarea id="u10_input" cols="50" rows="30"						
+						th:text="${clientRecord}?${clientRecord.message}:''">
+</textarea>
+				</p>
+
+			</div>
+			<div style="width: 500px; float: left; margin-left: 20px;">
+				<span>Server response message</span>
+				<p>
+
+					<textarea id="u10_input" cols="50" rows="30"						
+						th:text="${sentToClientRecord}?${sentToClientRecord.message}:''">
+</textarea>
+
+
+				</p>
+			</div>
+
+			<div style="width: 100%; float: left;">
+				<div align="center">
+					<input type="button" value="Close this"
+						onclick="javascript:self.close()" />
+				</div>
+			</div>
+		</div>
+
+	</div>
+</body>
+
+</html>

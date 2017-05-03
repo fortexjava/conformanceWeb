@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>FIX client conformance test center/ Solution Search</title>
+
+    <link href="../css/common.css" rel="stylesheet"/>
+</head>
+<body>
+<div class="main">
+	<div align="center" class="head">FIX client conformance test center/ Solution Admin</div>
+	<div class="content">
+	    <form action="#" th:action="@{/admin/solutionSearch}" th:object="${solutionForm}" method="post">
+
+            <ul class="contentUl">
+                <li>
+                    <div class="titleText">
+                        <span>Tag：</span>
+                    </div>
+                    <div class="contentBlock">
+                        <input class="inputText width300" th:field="*{tag}" style="width: 150px" th:value="${solutionForm.tag}"/>
+                    </div>
+                </li>
+                <li>
+                    <div class="titleText">
+                    </div>
+                    <div class="contentBlock">
+                        <span class="errorTip" th:if="${#fields.hasErrors('tag')}" th:text="${'Tag should not be empty'}">Tag Error</span>
+                    </div>
+                </li>
+                <li>
+                    <div class="titleText">
+                        <span>Code：</span>
+                    </div>
+                    <div class="contentBlock">
+                        <input class="inputText width300" th:field="*{code}" style="width: 150px" />
+                    </div>
+                </li>
+                <li>
+                    <div class="titleText">
+                    </div>
+                    <div class="contentBlock">
+                        <span class="errorTip" th:if="${#fields.hasErrors('code')}" th:text="${'Code should not be empty'}">Code Error</span>
+                    </div>
+                </li>
+                <li>
+                    <div class="titleText">
+                    </div>
+                    <div class="contentBlock">
+                        <input class="btn" type="submit" value="Search" />
+                    </div>
+                </li>
+            </ul>
+
+                <!--<p>
+            <div align="center">
+                Tag：<input th:field="*{tag}" style="width: 150px" th:value="${solutionForm.tag}"/>
+                <span style="color: red"  th:if="${#fields.hasErrors('tag')}" th:text="${'Tag should not be empty'}">Tag Error</span>
+            </div>
+
+            <div align="center">
+                Code：<input th:field="*{code}" style="width: 150px"/>
+                <span style="color: red"  th:if="${#fields.hasErrors('code')}" th:text="${'Code should not be empty'}">Code Error</span>
+            </div>
+        </p>
+
+        <p>
+            <div align="center">
+                <input class="btn" type="submit" value="Search"/>
+            </div>
+        </p>-->
+
+</form>
+	</div>	 
+</div>
+</body> 
+
+</html>

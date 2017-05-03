@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <title>FIX client conformance test center</title>
+
+    <link href="../css/common.css" rel="stylesheet"/>
+</head>
+<body>
+    <div class="main loginBlock">
+        <div align="center" class="head">Admin Login</div>
+        <div class="content">
+            <form action="#" th:action="@{/admins}" th:object="${loginForm}" method="post">
+
+                <div>
+                    <ul class="contentUl">
+                        <li>
+                            <div class="titleText">
+                                <span>Admin ：</span>
+                            </div>
+                            <div class="contentBlock">
+                                <input class="inputText width300" th:field="*{loginId}" style="width:300px" th:value="${loginForm.loginId}" />
+                            </div>
+                        </li>
+                        <li>
+                            <div class="titleText">
+                            </div>
+                            <div class="contentBlock">
+                                <!--<span class="errorTip" th:if="${#fields.hasErrors('loginId')}" th:text="${'Account should not be empty'}">Account Error</span>-->
+                                <span class="errorTip" th:if="${#fields.hasErrors('loginId')}" th:text="${'Account should not be empty'}">Account Error</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="titleText">
+                                <span>Password：</span>
+                            </div>
+                            <div class="contentBlock">
+                                <input class="inputText width300" th:field="*{password}" type="password" style="width:300px" />
+                            </div>
+                        </li>
+                        <!--<li>
+                            <div class="titleText"></div>
+                            <div class="contentBlock">
+                                <span class="errorTip" th:if="${#fields.hasErrors('password')}" th:text="${'Password should not be empty'}">Password Error</span>
+                            </div>
+                        </li>-->
+                        <li>
+                            <div class="titleText"></div>
+                            <div class="contentBlock">
+                                <!--<span class="errorTip" th:if="${#fields.hasErrors('illegal')}" th:text="${'Illegal account or password'}">Illegal account or password</span>-->
+                                <span class="errorTip" th:if="${#fields.hasErrors('password')}" th:text="${'Password should not be empty'}">Password Error</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="titleText"></div>
+                            <div class="contentBlock">
+                                <input class="btn" type="submit" value="Login" />
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <!--<p>
+                    <div align="center">
+                        Admin ：<input th:field="*{loginId}" style="width:300px" th:value="${loginForm.loginId}"/>
+                        <span style="color:red" th:if="${#fields.hasErrors('loginId')}" th:text="${'Account should not be empty'}">Account Error</span>
+                    </div>
+
+                    <div align="center">
+                        Password：<input th:field="*{password}" type="password" style="width:300px"/>
+                        <span style="color:red" th:if="${#fields.hasErrors('password')}" th:text="${'Password should not be empty'}">Password Error</span>
+                    </div>
+
+                    <div align="center">
+                        <span style="color:red" th:if="${#fields.hasErrors('illegal')}" th:text="${'Illegal account or password'}">Illegal account or password</span>
+                    </div>
+                </p>
+
+                <p>
+                    <div align="center">
+                        <input class="btn" type="submit" value="Login"/>
+                    </div>
+                </p>-->
+
+            </form>
+        </div>
+    </div>
+</body> 
+
+ </html>

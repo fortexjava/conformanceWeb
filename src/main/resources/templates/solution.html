@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+    <head>
+        <title>FIX client conformance test center/ Solution Save/Update</title>
+         
+    	  <style type="text/css">
+html,body{
+    height: 100%;
+    width: 100%;
+    font-size: 16px;
+    font-family: Black;
+    color: #535353;
+    margin: 0px; 
+}
+        .main{
+        		float:left;
+        		margin-left: auto;
+				margin-right: auto;    		     		 
+        		width:80%;
+        		height:auto;
+         		vertical-align:middle;
+        		position:absolute;
+        		left:10%;top:5%;
+        		border:solid #000 1px;
+        	}
+        .content{
+        	margin-left:1%;
+        	margin-right:1%;
+        	margin-top:30px;
+        }
+        
+        .btn{
+        	width:180px;
+        	height:50px;
+        	align:center;
+        }
+        
+        .head{
+        	font-size:30px;
+        	font-weight:bold;
+        	margin-top:5px;
+        }
+      </style>
+    </head>
+<body>
+<div class="main">
+	<div align="center" class="head">FIX client conformance test center/ Solution Save/Update</div>
+	<div class="content">
+		<form action="#" th:action="${solution}?'/admin/solutionUpdate':'/admin/solutionSave'" th:object="${solutionForm}"  method="post" > 
+		<p>
+		   	<div align="center"> 
+	   				Tag：<input th:field="*{tag}" style="width:300px" th:value="${solutionForm.tag}" readonly="readonly" />  
+	   				<span style="color:red"  th:if="${#fields.hasErrors('tag')}" th:text="${'Tag should not be empty'}">Tag Error</span>
+		   	</div>
+		   
+		   <div align="center"> 
+	   				Code：<input th:field="*{code}" style="width:300px" readonly="readonly" />
+	   				<span style="color:red"  th:if="${#fields.hasErrors('code')}" th:text="${'Code should not be empty'}">Code Error</span>  
+		 	</div>
+		 	
+		 	<div align="center"> 
+	   				Solution：<textarea id="solution" name="solution" cols="109" rows="12" th:text="${solution}" ></textarea>	   				  
+		 	</div>		 		   		 		   	
+		</p>
+	
+	 	<p>  
+		   	<div align="center"> 
+		   			<input class="btn" type="submit" th:value="${solution}?'Update':'Save'" />    
+		   	</div>
+		</p>
+		 
+		 </form>
+	</div>	 
+</div>
+</body> 
+
+ </html>

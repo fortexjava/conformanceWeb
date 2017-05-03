@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<MultiProperties xmlns="hu.skzs.multiproperties">
+    <Version>1.2</Version>
+    <Name>language</Name>
+    <Description></Description>
+    <Handler>Text File Handler</Handler>
+    <Columns>
+        <Key>
+            <Width>200</Width>
+        </Key>
+        <Column>
+            <Name>zh_CN</Name>
+            <Description></Description>
+            <Width>284</Width>
+            <HandlerConfiguration>/conformanceWeb/src/main/resources/messages_zh_CN.properties/#/UTF-8/#//#/${key}=${value}&#xD;
+/#//#//#//#/ETX</HandlerConfiguration>
+        </Column>
+        <Column>
+            <Name>en_US</Name>
+            <Description></Description>
+            <Width>181</Width>
+            <HandlerConfiguration>/conformanceWeb/src/main/resources/messages_en.properties/#/UTF-8/#//#/${key}=${value}&#xD;
+&#xD;
+/#//#//#//#/ETX</HandlerConfiguration>
+        </Column>
+        <Column>
+            <Name>zh_TW</Name>
+            <Description></Description>
+            <Width>150</Width>
+            <HandlerConfiguration>/conformanceWeb/src/main/resources/messages_zh_TW.properties/#/UTF-8/#//#/${key}=${value}&#xD;
+/#//#//#//#/ETX</HandlerConfiguration>
+        </Column>
+        <Column>
+            <Name></Name>
+            <Description></Description>
+            <Width>150</Width>
+            <HandlerConfiguration></HandlerConfiguration>
+        </Column>
+    </Columns>
+    <Records>
+        <Property>
+            <Name>account</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">账号</Value>
+            <Value disabled="false">Account</Value>
+            <Value disabled="false">賬號</Value>
+            <Value disabled="true"></Value>
+        </Property>
+        <Property>
+            <Name>password</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">密码</Value>
+            <Value disabled="false">Password</Value>
+            <Value disabled="false">密碼</Value>
+            <Value disabled="true"></Value>
+        </Property>
+        <Property>
+            <Name>accountNotEmpty</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">账号不能为空</Value>
+            <Value disabled="false">Account should not be empty</Value>
+            <Value disabled="false">賬號不能爲空</Value>
+            <Value disabled="true"></Value>
+        </Property>
+        <Property>
+            <Name>passwordNotEmpty</Name>
+            <Description></Description>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">密码不能为空</Value>
+            <Value disabled="false">Password should not be empty</Value>
+            <Value disabled="false">密碼不能爲空</Value>
+            <Value disabled="true"></Value>
+        </Property>
+        <Property>
+            <Name>login</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">登录</Value>
+            <Value disabled="false">Login</Value>
+            <Value disabled="false">登錄</Value>
+            <Value disabled="true"></Value>
+        </Property>
+        <Property>
+            <Name>illegalAccountOrPassword</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">账号或密码非法</Value>
+            <Value disabled="false">Illegal account or password</Value>
+            <Value disabled="false">賬號或密碼非法</Value>
+            <Value disabled="true"></Value>
+        </Property>
+        <Property>
+            <Name>server.login</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">请用客戶端连接或重连并登录到Fortex Fix服务器，IP为</Value>
+            <Value disabled="false">Please connect/reconnect and logon to Fortex Fix Server at IP</Value>
+            <Value disabled="false">請用客戶端連接或重連并登錄到Fortex Fix服務器，IP爲</Value>
+            <Value disabled="true"></Value>
+        </Property>
+        <Property>
+            <Name>quote.marketDataRequest</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Market Data订阅测试(可使用货币EUR/USD)</Value>
+            <Value disabled="false">Market Data Request for EUR/USD</Value>
+            <Value disabled="false">Market Data訂閲測試(可使用貨幣EUR/USD)</Value>
+            <Value disabled="true"></Value>
+        </Property>
+        <Property>
+            <Name>quote.unsubscribe</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">上一步订阅进行退订</Value>
+            <Value disabled="false">Unsubscribe of previous step</Value>
+            <Value disabled="false">對上一步訂閲進行退訂</Value>
+            <Value disabled="true"></Value>
+        </Property>
+        <Property>
+            <Name>server.logout</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">请从客户端退出Fix服务器</Value>
+            <Value disabled="false">Please logout from Fix Server</Value>
+            <Value disabled="false">請從客戶端退出Fix服務器</Value>
+            <Value disabled="true"></Value>
+        </Property>
+        <Property>
+            <Name>reset</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">重置所有步骤</Value>
+            <Value disabled="false">Reset all steps</Value>
+            <Value disabled="false">重置所有步驟</Value>
+            <Value disabled="true"></Value>
+        </Property>
+        <Property>
+            <Name>quote.passed</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">您的客户端连接已全部通过了Fortex Fix Market Data测试！</Value>
+            <Value disabled="false">You have passed the conformance test for Fortex Fix Market Data !!</Value>
+            <Value disabled="false">您的客戶端連接已全部通過了Fortex Fix Market Data測試！</Value>
+            <Value disabled="true"></Value>
+        </Property>
+        <Property>
+            <Name>trade.placeorder</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">请发起一个 New Order Single</Value>
+            <Value disabled="false">Please place a New Order Single</Value>
+            <Value disabled="false">請發起一個 New Order Single</Value>
+            <Value disabled="true"></Value>
+        </Property>
+        <Property>
+            <Name>trade.cancelrequest</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">请对之前的订单发起取消</Value>
+            <Value disabled="false">Please make a Cancel Request of previous order</Value>
+            <Value disabled="false">請對之前的訂單發起取消</Value>
+            <Value disabled="true"></Value>
+        </Property>
+        <Property>
+            <Name>autopilot.off</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Auto pilot 关闭</Value>
+            <Value disabled="false">Auto pilot is off</Value>
+            <Value disabled="false">Auto pilot 關閉</Value>
+            <Value disabled="true"></Value>
+        </Property>
+        <Property>
+            <Name>autopilot.on</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Auto pilot 开启</Value>
+            <Value disabled="false">Auto pilot is on</Value>
+            <Value disabled="false">Auto pilot 開啓</Value>
+            <Value disabled="true"></Value>
+        </Property>
+        <Property>
+            <Name>trade.passed</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">您的连接已经全部通过了Fortex Fix 订单交易测试</Value>
+            <Value disabled="false">You have passed the conformance test for Fortex FIX trade</Value>
+            <Value disabled="false">您的連接已經全部通過了Fortex Fix 訂單交易測試</Value>
+            <Value disabled="true"></Value>
+        </Property>
+        <Property>
+            <Name>check.isrejected</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">请确认你的订单是否能被拒绝</Value>
+            <Value disabled="false">check if your order is rejected</Value>
+            <Value disabled="false">請確認你的訂單是否能被拒絕</Value>
+            <Value disabled="true"></Value>
+        </Property>
+        <Property>
+            <Name>readyandcheck</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">已运行，查看状态</Value>
+            <Value disabled="false">Finished, check status</Value>
+            <Value disabled="false">已運行，查看狀態</Value>
+            <Value disabled="true"></Value>
+        </Property>
+        <Property>
+            <Name>logout</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">退出</Value>
+            <Value disabled="false">Logout</Value>
+            <Value disabled="false">退出</Value>
+            <Value disabled="true"></Value>
+        </Property>
+        <Property>
+            <Name>viewlogs</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">查看日志</Value>
+            <Value disabled="false">View logs</Value>
+            <Value disabled="false">查看日志</Value>
+            <Value disabled="true"></Value>
+        </Property>
+        <Property>
+            <Name>status</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">状态</Value>
+            <Value disabled="false">Status</Value>
+            <Value disabled="false">狀態</Value>
+            <Value disabled="true"></Value>
+        </Property>
+        <Property>
+            <Name>message.yousent</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">你发出的信息</Value>
+            <Value disabled="false">Messages you sent</Value>
+            <Value disabled="false">你發出的信息</Value>
+            <Value disabled="true"></Value>
+        </Property>
+        <Property>
+            <Name>message.serversent</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">服务器端响应的信息</Value>
+            <Value disabled="false">Server response message</Value>
+            <Value disabled="false">服務端響應的信息</Value>
+            <Value disabled="true"></Value>
+        </Property>
+        <Property>
+            <Name>btn.close</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">关闭该页</Value>
+            <Value disabled="false">Close this page</Value>
+            <Value disabled="false">關閉該頁</Value>
+            <Value disabled="true"></Value>
+        </Property>
+    </Records>
+</MultiProperties>

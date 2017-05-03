@@ -1,0 +1,55 @@
+﻿
+html, body { font-size: 16px; color: #535353; margin: 0px; }
+.content { }
+
+.btn { width: 180px; height: 50px; align: center; }
+
+.head { font-size: 30px; font-weight: bold; margin-top: 5px; }
+
+body { background-color: #d2d2d2; font-family: Arial; }
+.main { background-color: #fbfafa; box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.5); border: 0; border-radius: 5px; padding: 30px; margin: 5px; }
+.head { height: auto; line-height: 65px; text-align: left; }
+.main .inputText { background-color: rgb(251, 250, 250); border: 0; height: 35px; line-height: 35px; border-radius: 1px; box-shadow: 0px 0px 1px 1px rgba(0,0,0,0.3); text-indent: 12px; font-size: 17px; color: Gray; }
+.loginBlock { position: absolute; height: auto; width: 700px; left: 50%; margin-left: -350px; }
+.loginBlock .head { height: 50px; line-height: 50px; text-align: center; margin-top: 25px; }
+input.width300 { width: 300px; }
+
+.loginBlock .content { width: 500px; margin: 0 auto; padding: 30px 0; }
+ul { list-style: none; }
+.contentUl { }
+.contentUl li { }
+.contentUl .titleText { display: inline-block; width: 100px; }
+.contentUl .titleText span { }
+.contentUl .contentBlock { display: inline-block; }
+.contentUl .contentBlock input { }
+.contentUl .errorTip { color: red; display: block; margin: 10px 0; }
+
+input[type='radio'] { cursor: pointer; }
+
+.btn { width: 140px; height: 40px; font-size: 16px; background-color: rgba(237, 93, 15, 0.82); color: #fff; border: 0; border-radius: 5px; box-shadow: 0 0 2px 0 #ed5d0f; cursor: pointer; }
+.main .right { }
+.main .right a { color: rgba(237, 93, 15, 0.8); text-decoration: none; cursor: pointer; }
+.main .right a:hover { color: rgba(237, 93, 15, 1); }
+
+.main table { width: 100%; padding-bottom: 30px; }
+
+.main .content table { }
+.main .content table tr { line-height: 45px; }
+.main .content table td { border-bottom: 1px solid rgba(128, 128, 128, 0.3); }
+.main .content table td:last-child { min-width: 150px; }
+.main .content table td:last-child a { text-decoration: underline; margin: 0 10px; font-weight: bold; opacity: 0.8; }
+.main .content table td:last-child a:hover { opacity: 1; }
+.main .content table label { }
+.main .content input[type="button"] { background-color: rgba(237, 93, 15, 0.82); border: 0; height: 35px; line-height: 35px; padding: 0 15px; border-radius: 6px; color: #fff; cursor: pointer; }
+.main .content input[type="button"]:hover { background-color: rgba(237, 93, 15, 1); }
+.main .content input[type="button"][disabled], .main .content input[type="button"][disabled="disabled"] { background-color: gray; border: 0; height: 35px; line-height: 35px; padding: 0 15px; border-radius: 6px; color: #fff; cursor: default; }
+.main .content input[type="button"][disabled]:hover, .main .content input[type="button"][disabled="disabled"]:hover { background-color: gray; }
+.main .content table input:hover { }
+
+.viewLogBlock { }
+.viewLogBlock textarea { width: 96%; font-size: 14px; padding: 2px 10px; font-family: Arial; color: rgb(62, 140, 222); line-height: 28px; }
+.viewLogBlock .top { }
+.viewLogBlock .mid { position: relative; }
+.viewLogBlock .mid .left { width: 50%; float: left; }
+.viewLogBlock .mid .right { width: 50%; float: left; }
+.viewLogBlock .bottom { }

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+    <head>
+        <title>Quote conformance test center</title>
+        <script type="text/javascript" src="/js/jquery-1.4.4.min.js"></script>
+    	  <style type="text/css">
+html,body{
+    height: 100%; 
+    width: 100%;
+    font-size: 16px;
+   
+    color: #535353;
+    margin: 0px;  
+}
+        .main{
+        		float:left;
+        		margin-left: auto;
+				margin-right: auto;    	
+				margin-bottom:10px;	     		 
+        		width:80%;
+        		height:auto;
+         		vertical-align:middle;
+        		position:absolute;
+        		left:10%;top:5%;
+        		border:solid #000 1px;
+        	}
+        .content{
+        	margin-left:1%;
+        	margin-right:1%;
+        	margin-top:5px;
+        }
+        
+        .btn{
+        	width:120px;
+        	height:50px;
+        	align:center;
+        }
+        
+        .head{
+        	font-size:30px;
+        	font-weight:bold;
+        	margin-top:5px;
+        }
+      </style>
+    </head>
+<body>
+
+<div class="main">
+	<div  align="right" class="right"><a href="/logout">[Logout]</a>&nbsp;</div>
+	<div align="center" class="head"> Welcome <span th:text="${user.loginId}"></span>, this is a Market Data conformance test </div>
+	<div class="content">
+		 <table width="80%">		 	
+		 	
+		 	<tr>
+		 		<td >step 1: Please connect/reconnect and logon to Fortex Fix Server at IP:<label th:text="${ip}">124.4.2.11</label></td>
+		 		<td><input type="button" value="Ready, check my status"  onclick="checkStatus(1)" /></td>
+		 		<td>
+		 			<span id="step1" style="display:none" ><label id="step1_status">Failed</label>
+		 			<a th:href="@{/track/viewlogs(username=${user.loginId},step=1)}" target="_blank">View logs</a> 
+		 			</span>
+		 		</td>
+		 	</tr>
+		 	
+		 	<tr>
+		 		<td  >step 2: Please subscribe to Market Data for EUR/USD</td>
+		 		<td><input type="button" value="Ready, check my status" onclick="checkStatus(2)" disabled="disabled" id="btn2" /></td>
+		 		<td>
+		 			<span id="step2" style="display:none" ><label id="step2_status">Failed</label> 		 				 
+		 				<a th:href="@{/track/viewlogs(username=${user.loginId},step=2)}" target="_blank">View logs</a>
+		 			</span>
+		 		</td>
+		 	</tr>
+		 	
+		 	<tr>
+		 		<td >step 3: Please unsubscribe EUR/USD</td>
+		 		<td><input type="button" value="Ready, check my status" onclick="checkStatus(3)" disabled="disabled" id="btn3" /></td>
+		 		<td>
+		 			<span id="step3" style="display:none" ><label id="step3_status">Failed</label> 		 				 
+		 				<a th:href="@{/track/viewlogs(username=${user.loginId},step=3)}" target="_blank">View logs</a>
+		 			</span>
+		 		</td>
+		 	</tr>
+			
+			
+			<tr>
+		 		<td >step 4: Please logout</td>
+		 		<td><input type="button" value="Ready, check my status" onclick="checkStatus(4)" disabled="disabled" id="btn4" /></td>
+		 		<td>
+		 			<span id="step4" style="display:none" ><label id="step4_status">Failed</label> 		 				 
+		 				<a th:href="@{/track/viewlogs(username=${user.loginId},step=4)}" target="_blank">View logs</a>
+		 			</span>
+		 		</td>
+		 	</tr>
+
+ 		 	
+		 </table>
+		 <input id="username" th:value="${user.loginId}"  type="hidden"  />
+		 <div align="center" id="result" style="display:none">
+		 	You have passed the conformance test for Fortex FIX Market Data !!
+		 </div>
+		 
+		 <div align="center">
+		 		<input type="button" value="Reset all steps"  onclick="reset()"/>
+		 </div>
+		  
+		 
+	</div>	 
+</div>
+</body>
+<script type="text/javascript">	
+/*<![CDATA[*/
+
+var steps = 4;
+ 
+ /*]]>*/
+</script>
+<script type="text/javascript" src="/js/conformance.js"></script>
+
+ </html>
